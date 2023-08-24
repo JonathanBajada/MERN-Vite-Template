@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
 
 const HomeLayout = () => {
 	return (
-		<div>
-			<Navbar />
+		<>
+			{/* <Box bg="#4444" w="100%" p={4} color="white">
+				This is the Box
+			</Box> */}
 			<Outlet />
-		</div>
+		</>
 	);
 };
 
