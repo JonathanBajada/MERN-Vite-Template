@@ -8,11 +8,11 @@ import {
 	Heading,
 	Container,
 } from "@chakra-ui/react";
-import logo from "../assets/images/logo.svg";
 import main from "../assets/images/main.svg";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Logo } from "../components";
 
 const Landing = () => {
 	return (
@@ -25,59 +25,55 @@ const Landing = () => {
 				h="6rem"
 				mb="-6rem"
 				alignItems="center">
-				<Box>
-					<ChakraImage src={logo} />
-				</Box>
+				<Logo />
 			</Navigation>
 
-			<Box>
-				<Container w="90vw" maxW="1120px">
-					<Grid
-						alignItems="center"
-						minH="100vh"
-						templateColumns={{ lg: "1fr 400px" }}
-						columnGap="3rem">
-						<GridItem w="100%">
-							<Heading mb="1.5rem">
-								Job{" "}
-								<ChakraText as="span" color="#2cb1bc">
-									Tracking{" "}
-								</ChakraText>
-								App
-							</Heading>
-
-							<ChakraText lineHeight={2} mb={"1.5rem"}>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-								Architecto deserunt nisi quia dolores, soluta non ea impedit,
-								earum voluptatum eum harum debitis eaque, itaque natus! Quos
-								sapiente laboriosam itaque ipsam.
+			<Container w="90vw" maxW="1120px">
+				<Grid
+					alignItems="center"
+					minH="100vh"
+					templateColumns={{ lg: "1fr 400px" }}
+					columnGap="3rem">
+					<GridItem w="100%">
+						<Heading mb="1.5rem">
+							Job{" "}
+							<ChakraText as="span" color="#2cb1bc">
+								Tracking{" "}
 							</ChakraText>
+							App
+						</Heading>
 
-							<ButtonGroup spacing="4">
-								<Button bg="#2cb1bc">
-									<ChakraLink color="#ffff" as={ReactRouterLink} to="/register">
-										Register
-									</ChakraLink>
-								</Button>
+						<ChakraText lineHeight={2} mb={"1.5rem"}>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Architecto deserunt nisi quia dolores, soluta non ea impedit,
+							earum voluptatum eum harum debitis eaque, itaque natus! Quos
+							sapiente laboriosam itaque ipsam.
+						</ChakraText>
 
-								<Button bg="#2cb1bc">
-									<ChakraLink color="#ffff" as={ReactRouterLink} to="/login">
-										Login / Demo User
-									</ChakraLink>
-								</Button>
-							</ButtonGroup>
-						</GridItem>
+						<ButtonGroup spacing="4">
+							<Button bg="#2cb1bc">
+								<ChakraLink color="#ffff" as={ReactRouterLink} to="/register">
+									Register
+								</ChakraLink>
+							</Button>
 
-						<GridItem w="100%">
-							<ChakraImage
-								src={main}
-								objectFit="cover"
-								display={{ lg: "block", sm: "none" }}
-							/>
-						</GridItem>
-					</Grid>
-				</Container>
-			</Box>
+							<Button bg="#2cb1bc">
+								<ChakraLink color="#ffff" as={ReactRouterLink} to="/login">
+									Login / Demo User
+								</ChakraLink>
+							</Button>
+						</ButtonGroup>
+					</GridItem>
+
+					<GridItem w="100%">
+						<ChakraImage
+							src={main}
+							objectFit="cover"
+							display={{ lg: "block", sm: "none" }}
+						/>
+					</GridItem>
+				</Grid>
+			</Container>
 		</Box>
 	);
 };
