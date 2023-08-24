@@ -17,11 +17,13 @@ const ErrorPage = () => {
 		return (
 			<Container
 				h={"100vh"}
+				width={"90vw"}
+				maxW={"600px"}
 				justifyContent={"center"}
 				display={"flex"}
 				flexDirection={"column"}
 				alignItems={"center"}>
-				<ChakraImage src={img} alt="error" mb={"2rem"} />
+				<ChakraImage src={img} alt="error" mb={"2rem"} mt={"-3rem"} />
 				<Heading as="h3" size="lg">
 					Oops! Page not found
 				</Heading>
@@ -29,11 +31,12 @@ const ErrorPage = () => {
 					we can't seem to find the page you are looking for
 				</ChakraText>
 				<ChakraLink
+					textTransform={"capitalize"}
 					color="#2cb1bc"
 					as={ReactRouterLink}
 					to="/login"
 					textDecor="underline">
-					Back to Home
+					back home
 				</ChakraLink>
 			</Container>
 		);
