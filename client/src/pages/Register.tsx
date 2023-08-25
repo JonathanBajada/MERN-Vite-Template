@@ -11,12 +11,18 @@ import {
 	Button,
 	Text as ChakraText,
 	Link as ChakraLink,
+	InputRightElement,
+	InputGroup,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Logo } from "../components";
+import { useState } from "react";
 
 const Register = () => {
+	const [show, setShow] = useState(false);
+	const handleClick = () => setShow(!show);
+
 	const {
 		handleSubmit,
 		register,
@@ -114,15 +120,25 @@ const Register = () => {
 						<FormLabel mt="1rem" htmlFor="password">
 							Password
 						</FormLabel>
-						<Input
-							type="password"
-							id="password"
-							defaultValue={"John"}
-							{...register("password", {
-								required: "This is required",
-								minLength: { value: 4, message: "Minimum length should be 4" },
-							})}
-						/>
+						<InputGroup>
+							<Input
+								type={show ? "text" : "password"}
+								id="password"
+								defaultValue={"John"}
+								{...register("password", {
+									required: "This is required",
+									minLength: {
+										value: 4,
+										message: "Minimum length should be 4",
+									},
+								})}
+							/>
+							<InputRightElement width="4.5rem">
+								<Button h="1.75rem" size="sm" onClick={handleClick}>
+									{show ? "Hide" : "Show"}
+								</Button>
+							</InputRightElement>
+						</InputGroup>
 					</FormControl>
 					<Button
 						w={"100%"}
