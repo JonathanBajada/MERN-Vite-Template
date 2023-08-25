@@ -41,7 +41,7 @@ const Register = () => {
 			justifyContent={"center"}
 			flexDirection={"column"}
 			alignItems={"center"}>
-			<Card width={"90%"} maxW={"800px"} p="4" py="8">
+			<Card width={"90%"} maxW={"500px"} p="4" py="8">
 				<CardHeader display={"flex"} flexDirection={"column"}>
 					<Center mb={"2rem"}>
 						<Logo />
@@ -54,23 +54,79 @@ const Register = () => {
 				</CardHeader>
 
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<FormControl isInvalid={errors.name} mb={4}>
-						<FormLabel htmlFor="name">Name</FormLabel>
+					<FormControl isInvalid={(errors.fname, errors.lname)} mb={4}>
+						<FormLabel htmlFor="fname">First Name</FormLabel>
 						<Input
 							type="text"
-							id="name"
+							id="fname"
 							defaultValue={"John"}
-							{...register("name", {
+							{...register("fname", {
 								required: "This is required",
 								minLength: { value: 4, message: "Minimum length should be 4" },
 							})}
 						/>
 						<FormErrorMessage>
-							{errors.name && errors.name.message}
+							{errors.fname && errors.fname.message}
 						</FormErrorMessage>
+
+						<FormLabel mt="1rem" htmlFor="lname">
+							Last Name
+						</FormLabel>
+						<Input
+							type="text"
+							id="lname"
+							defaultValue={"Bajada"}
+							{...register("lname", {
+								required: "This is required",
+								minLength: { value: 4, message: "Minimum length should be 4" },
+							})}
+						/>
+						<FormErrorMessage>
+							{errors.lname && errors.lname.message}
+						</FormErrorMessage>
+
+						<FormLabel mt="1rem" htmlFor="location">
+							Location
+						</FormLabel>
+						<Input
+							type="text"
+							id="location"
+							defaultValue={"Toronto"}
+							{...register("location", {
+								required: "This is required",
+								minLength: { value: 4, message: "Minimum length should be 4" },
+							})}
+						/>
+
+						<FormLabel mt="1rem" htmlFor="email">
+							Email
+						</FormLabel>
+						<Input
+							type="email"
+							id="email"
+							defaultValue={"JohnBajada01@gmail.com"}
+							{...register("email", {
+								required: "This is required",
+								minLength: { value: 4, message: "Minimum length should be 4" },
+							})}
+						/>
+
+						<FormLabel mt="1rem" htmlFor="password">
+							Password
+						</FormLabel>
+						<Input
+							type="password"
+							id="password"
+							defaultValue={"John"}
+							{...register("password", {
+								required: "This is required",
+								minLength: { value: 4, message: "Minimum length should be 4" },
+							})}
+						/>
 					</FormControl>
 					<Button
 						w={"100%"}
+						mt={4}
 						mb={4}
 						colorScheme="teal"
 						isLoading={isSubmitting}
