@@ -1,18 +1,29 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ChakraProvider } from '@chakra-ui/react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {
 	HomeLayout,
 	Register,
 	Login,
 	ErrorPage,
 	DashboardLayout,
-} from "./pages";
-import Landing from "./pages/Landing";
+} from './pages'
+import Landing from './pages/Landing'
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+	styles: {
+		global: {
+			body: {
+				bg: '#f8fafc',
+			},
+		},
+	},
+})
 
 function App() {
 	const router = createBrowserRouter([
 		{
-			path: "/",
+			path: '/',
 			element: <HomeLayout />,
 			errorElement: <ErrorPage />,
 			children: [
@@ -21,26 +32,26 @@ function App() {
 					element: <Landing />,
 				},
 				{
-					path: "register",
+					path: 'register',
 					element: <Register />,
 				},
 				{
-					path: "login",
+					path: 'login',
 					element: <Login />,
 				},
 				{
-					path: "DashboardLayout",
+					path: 'DashboardLayout',
 					element: <DashboardLayout />,
 				},
 			],
 		},
-	]);
+	])
 
 	return (
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			<RouterProvider router={router} />
 		</ChakraProvider>
-	);
+	)
 }
 
-export default App;
+export default App

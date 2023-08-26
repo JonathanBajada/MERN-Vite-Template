@@ -2,24 +2,22 @@ module.exports = {
 	env: {
 		browser: true,
 	},
-	parser: "@typescript-eslint/parser",
-	extends: ["eslint:recommended", "plugin:react-hooks/recommended"],
-	overrides: [
-		{
-			files: ["client/**/*"],
-			plugins: ["react"],
-			rules: {
-				// React-specific rules here
-			},
-		},
-		{
-			files: ["server/**/*"],
-			env: {
-				node: true,
-			},
-			rules: {
-				// Node.js-specific rules here
-			},
-		},
+	extends: [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:react/jsx-runtime",
+		"prettier",
 	],
+	parser: "@typescript-eslint/parser",
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+		},
+		ecmaVersion: "latest",
+		sourceType: "module",
+	},
+	plugins: ["react", "@typescript-eslint"],
+	rules: {},
 };
