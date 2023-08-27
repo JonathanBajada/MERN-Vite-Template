@@ -1,11 +1,10 @@
 import { Box, Container, Show } from '@chakra-ui/react'
 import NavLinks from './NavLinks'
 import Logo from './Logo'
-// import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { useAppSelector } from '../redux/hooks'
 
 const BigSideBar = () => {
-	// const { showSmallBar } = useAppSelector((state) => state.dashboard)
-	// const dispatch = useAppDispatch()
+	const { showSmallBar } = useAppSelector((state) => state.dashboard)
 
 	return (
 		<Show above='lg'>
@@ -13,6 +12,8 @@ const BigSideBar = () => {
 				minH={'100vh'}
 				h={'100%'}
 				w={'250px'}
+				marginLeft={showSmallBar === true ? '0px' : '-250px'}
+				transition={'margin-left 0.3s ease-in-out'}
 				boxShadow={'1px 0px 0px 0px rgba(0, 0, 0, 0.1);'}
 			>
 				<Container position={'sticky'} top={0}>
@@ -27,41 +28,3 @@ const BigSideBar = () => {
 }
 
 export default BigSideBar
-
-/*
-
-  display: none;
-  @media (min-width: 992px) {
-    display: block;
-    box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
-    .sidebar-container {
-      background: var(--background-secondary-color);
-      min-height: 100vh;
-      height: 100%;
-      width: 250px;
-      margin-left: -250px;
-      transition: margin-left 0.3s ease-in-out;
-    }
-    .content {
-      position: sticky;
-      top: 0;
-    }
-    .show-sidebar {
-      margin-left: 0;
-    }
-    header {
-      height: 6rem;
-      display: flex;
-      align-items: center;
-      padding-left: 2.5rem;
-    }
-
-    .active {
-      color: var(--primary-500);
-    }
-    .pending {
-      background: var(--background-color);
-    }
-  }
-
-*/

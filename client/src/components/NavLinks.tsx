@@ -19,8 +19,12 @@ const NavLinks = () => {
 						to={path}
 						key={text}
 						_activeLink={{ color: theme.colors.brand.primary }}
-						transition={'0.3s ease-in-out all'}
-						_hover={{ color: theme.colors.brand.primary }}
+						transition={'0.3s ease-in-out'}
+						_hover={{
+							color: theme.colors.brand.primary,
+							paddingLeft: '3rem',
+							transition: '0.3s ease-in-out',
+						}}
 						end
 					>
 						<Box
