@@ -3,7 +3,7 @@ import links from '../utils/links'
 import { Flex, Box, useTheme } from '@chakra-ui/react'
 import { Link as CLink } from '@chakra-ui/react'
 
-const NavLinks = () => {
+const NavLinksBig = () => {
 	const theme = useTheme()
 
 	return (
@@ -22,6 +22,8 @@ const NavLinks = () => {
 						transition={'0.3s ease-in-out'}
 						_hover={{
 							color: theme.colors.brand.primary,
+							paddingLeft: '1rem',
+							transition: '0.3s ease-in-out',
 						}}
 						end
 					>
@@ -42,4 +44,33 @@ const NavLinks = () => {
 	)
 }
 
-export default NavLinks
+export default NavLinksBig
+
+/*
+  .nav-links {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary-color);
+    padding: 1rem 0;
+    text-transform: capitalize;
+    transition: var(--transition);
+  }
+  .nav-link:hover {
+    color: var(--primary-500);
+  }
+  .icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    display: grid;
+    place-items: center;
+  }
+  .active {
+    color: var(--primary-500);
+  }
+
+*/

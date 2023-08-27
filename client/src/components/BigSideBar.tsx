@@ -1,5 +1,5 @@
 import { Box, Container, Show } from '@chakra-ui/react'
-import NavLinks from './NavLinks'
+import NavLinksBig from './NavLinksBig'
 import Logo from './Logo'
 import { useAppSelector } from '../redux/hooks'
 
@@ -17,10 +17,19 @@ const BigSideBar = () => {
 				boxShadow={'1px 0px 0px 0px rgba(0, 0, 0, 0.1);'}
 			>
 				<Container position={'sticky'} top={0}>
-					<Box>
+					<header
+						style={{
+							height: '6rem',
+							display: 'flex',
+							alignItems: 'center',
+							paddingLeft: '2rem',
+						}}
+					>
 						<Logo />
+					</header>
+					<Box pl={'2rem'}>
+						<NavLinksBig />
 					</Box>
-					<NavLinks />
 				</Container>
 			</Box>
 		</Show>
