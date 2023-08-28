@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import dashboardReducer from './redux-slice/dashboard-slice'
+import userReducer from './redux-slice/user-slice'
 
 export const store = configureStore({
-	reducer: { dashboard: dashboardReducer },
+	reducer: { dashboard: dashboardReducer, user: userReducer },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

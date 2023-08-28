@@ -9,6 +9,7 @@ const BigSideBar = () => {
 	return (
 		<Show above='lg'>
 			<Box
+				bgColor={'#ffff'}
 				minH={'100vh'}
 				h={'100%'}
 				w={'250px'}

@@ -1,4 +1,4 @@
-import { Flex, Button, Show, Box } from '@chakra-ui/react'
+import { Flex, Button, Show } from '@chakra-ui/react'
 import { FaTimes } from 'react-icons/fa'
 import { setShowSmallBar } from '../redux/redux-slice/dashboard-slice'
 import { useAppDispatch, useAppSelector } from '../redux/hooks'
@@ -22,7 +22,7 @@ const SmallSideBar = () => {
 				opacity={{ base: showSmallBar === false ? 0 : 1 }}
 			>
 				<Flex
-					borderRadius='sm'
+					borderRadius='md'
 					h={'95vh'}
 					w={'90vw'}
 					background={'#ffff'}
@@ -41,9 +41,7 @@ const SmallSideBar = () => {
 					>
 						<FaTimes />
 					</Button>
-					<Box>
-						<Logo />
-					</Box>
+					<Logo />
 					<NavLinks />
 				</Flex>
 			</Flex>
