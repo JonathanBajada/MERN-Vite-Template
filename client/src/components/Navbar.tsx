@@ -4,7 +4,7 @@ import Logo from './Logo'
 import { setShowSmallBar } from '../redux/redux-slice/dashboard-slice'
 import { useAppDispatch } from '../redux/hooks'
 import LogoutContainer from './LogoutContainer'
-import ThemeToggle from './ThemeToggle'
+// import ThemeToggle from './ThemeToggle'
 
 const Navbar = () => {
 	const theme = useTheme()
@@ -42,7 +42,7 @@ const Navbar = () => {
 					Dashboard
 				</Heading>
 				<Box display={'flex'} gap={5}>
-					<ThemeToggle />
+					{/* <ThemeToggle /> */}
 					<LogoutContainer />
 				</Box>
 			</Flex>

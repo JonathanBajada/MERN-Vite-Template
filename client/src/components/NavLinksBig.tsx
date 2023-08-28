@@ -45,32 +45,3 @@ const NavLinksBig = () => {
 }
 
 export default NavLinksBig
-
-/*
-  .nav-links {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .nav-link {
-    display: flex;
-    align-items: center;
-    color: var(--text-secondary-color);
-    padding: 1rem 0;
-    text-transform: capitalize;
-    transition: var(--transition);
-  }
-  .nav-link:hover {
-    color: var(--primary-500);
-  }
-  .icon {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    display: grid;
-    place-items: center;
-  }
-  .active {
-    color: var(--primary-500);
-  }
-
-*/

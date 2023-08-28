@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {
 	HomeLayout,
@@ -18,29 +18,18 @@ import { store } from './redux/store'
 import { Provider } from 'react-redux'
 
 const theme = extendTheme({
+	config: {
+		initialColorMode: 'light',
+		useSystemColorMode: false,
+	},
 	styles: {
 		global: {
-			body: {
-				bg: '#f8fafc',
-			},
+			body: { bg: '#f8fafc' },
 		},
 	},
 	colors: {
 		brand: {
 			primary: '#2cb1bc',
-		},
-	},
-	components: {
-		SmallBarContainer: {
-			baseStyle: {
-				backgroundColor: 'red',
-				position: 'fixed',
-				inset: '0',
-				background: 'rgba(0, 0, 0, 0.7)',
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-			},
 		},
 	},
 })
@@ -96,6 +85,7 @@ function App() {
 
 	return (
 		<ChakraProvider theme={theme}>
+			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 			<Provider store={store}>
 				<RouterProvider router={router} />
 			</Provider>

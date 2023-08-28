@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 
 const ErrorPage = () => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const error: any = useRouteError()
 	console.log(error)
 
@@ -29,7 +30,7 @@ const ErrorPage = () => {
 					Oops! Page not found
 				</Heading>
 				<ChakraText mb={'1rem'}>
-					we can't seem to find the page you are looking for
+					we can&apos;t seem to find the page you are looking for
 				</ChakraText>
 				<ChakraLink
 					textTransform={'capitalize'}

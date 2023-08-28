@@ -6,7 +6,7 @@ export interface DashboardState {
 }
 
 const initialState: DashboardState = {
-	showSmallBar: false,
+	showSmallBar: true,
 	darkMode: false,
 }
 

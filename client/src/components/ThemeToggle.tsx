@@ -1,11 +1,9 @@
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
-import { Button } from '@chakra-ui/react'
-import { useAppSelector, useAppDispatch } from '../redux/hooks'
-import { setDarkMode } from '../redux/redux-slice/dashboard-slice'
+import { Button, useColorMode } from '@chakra-ui/react'
 
 const ThemeToggle = () => {
-	const { darkMode } = useAppSelector((state) => state.dashboard)
-	const disptach = useAppDispatch()
+	const { colorMode, toggleColorMode } = useColorMode()
+
 	return (
 		<Button
 			display={'grid'}
@@ -13,9 +11,11 @@ const ThemeToggle = () => {
 			height={'2rem'}
 			alignSelf={'center'}
 			bg={'transparent'}
-			onClick={() => disptach(setDarkMode(!darkMode))}
+			onClick={() => {
+				toggleColorMode()
+			}}
 		>
-			{darkMode === true ? (
+			{colorMode === 'dark' ? (
 				<BsFillMoonFill />
 			) : (
 				<BsFillSunFill className='toggle-icon' />
