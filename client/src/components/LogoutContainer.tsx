@@ -23,6 +23,7 @@ const LogoutContainer = () => {
 				<FaCaretDown />
 			</Button>
 			<Box
+				boxShadow={' 0 1px 0 0 rgba(0, 0, 0, 0.1)'}
 				position={'absolute'}
 				top={'45px'}
 				w={'100%'}
