@@ -26,6 +26,7 @@ export class UnathenticatedError extends Error {
     this.statusCode = StatusCodes.UNAUTHORIZED;
   }
 }
+
 export class UnautharizedError extends Error {
   statusCode: StatusCodes.FORBIDDEN;
   constructor(message: string) {

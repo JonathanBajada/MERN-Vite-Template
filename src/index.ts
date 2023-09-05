@@ -36,6 +36,7 @@ app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
 });
 
+// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const port = process.env.PORT || 5100;
 
 // Connect mongodb

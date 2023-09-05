@@ -35,6 +35,11 @@ module.exports = {
 	   '@typescript-eslint/no-var-requires': 'off',
 	   'deprecation/deprecation': 'off',
 	   "@typescript-eslint/no-unsafe-call": "off",
-	   "@typescript-eslint/no-unsafe-member-access": "off"
+	   "@typescript-eslint/no-unsafe-member-access": "off",
+	   "@typescript-eslint/no-unsafe-assignment": "off",
+	   "@typescript-eslint/strict-boolean-expressions": "off",
+	   "@typescript-eslint/prefer-nullish-coalescing": "off"
+
+
 	},
  }
