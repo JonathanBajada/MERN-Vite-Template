@@ -39,7 +39,5 @@ module.exports = {
 	   "@typescript-eslint/no-unsafe-assignment": "off",
 	   "@typescript-eslint/strict-boolean-expressions": "off",
 	   "@typescript-eslint/prefer-nullish-coalescing": "off"
-
-
 	},
  }

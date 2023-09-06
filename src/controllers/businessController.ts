@@ -41,3 +41,15 @@ export const updateBusiness = async (
     .status(StatusCodes.OK)
     .json({ msg: "business modified", business: updatedBusiness });
 };
+
+export const deleteBusiness = async (
+  req: MyRequest,
+  res: Response,
+): Promise<void> => {
+  const { id } = req.params;
+  const deleteBusiness = await Business.findByIdAndDelete(id);
+  if (!deleteBusiness) throw new NotFoundError(`no business with id ${id}`);
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: "business modified", business: deleteBusiness });
+};
