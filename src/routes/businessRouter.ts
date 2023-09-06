@@ -1,9 +1,14 @@
 import { Router } from "express";
 
-import { createBusiness } from "../controllers/businessController.js";
+import {
+  createBusiness,
+  getAllBusinesses,
+  updateBusiness,
+} from "../controllers/businessController.js";
 
 const router = Router();
 
-router.route("/").post(createBusiness);
+router.route("/").get(getAllBusinesses).post(createBusiness);
+router.route("/:id").patch(updateBusiness);
 
 export default router;
