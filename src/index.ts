@@ -3,10 +3,10 @@ import * as dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import mongoose from "mongoose";
-import { validateTest } from "./middleware/validationMiddleware.js";
 import type { Request, Response } from "express";
 // routers
 import jobRouter from "./routes/jobRouter.js";
+import businessRouter from "./routes/businessRouter.js";
 
 // ERROR Middleware gets triggerd by existing route
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
@@ -24,12 +24,9 @@ app.get("/", (req: Request, res: Response) => {
   res.send("hello world");
 });
 
-app.post("/api/v1/test", validateTest, (req, res) => {
-  const { name } = req.body;
-  res.json({ message: `hello: ${name}` });
-});
-
 app.use("/api/v1/jobs", jobRouter);
+
+app.use("/api/v1/business", businessRouter);
 
 // ERROR 404
 app.use("*", (req, res) => {
