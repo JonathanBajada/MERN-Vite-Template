@@ -1,5 +1,5 @@
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {
 	HomeLayout,
 	Register,
@@ -11,11 +11,11 @@ import {
 	AllJobs,
 	Profile,
 	Admin,
-} from './pages'
-import Landing from './pages/Landing'
-import { extendTheme } from '@chakra-ui/react'
-import { store } from './redux/store'
-import { Provider } from 'react-redux'
+} from './pages';
+import Landing from './pages/Landing';
+import { extendTheme } from '@chakra-ui/react';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 const theme = extendTheme({
 	config: {
@@ -32,7 +32,7 @@ const theme = extendTheme({
 			primary: '#2cb1bc',
 		},
 	},
-})
+});
 
 function App() {
 	const router = createBrowserRouter([
@@ -81,7 +81,7 @@ function App() {
 				},
 			],
 		},
-	])
+	]);
 
 	return (
 		<ChakraProvider theme={theme}>
@@ -90,7 +90,7 @@ function App() {
 				<RouterProvider router={router} />
 			</Provider>
 		</ChakraProvider>
-	)
+	);
 }
 
-export default App
+export default App;
